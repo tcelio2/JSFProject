@@ -1,0 +1,23 @@
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/templates/principal.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+	<ui:define name="menu">
+		
+	</ui:define>
+	<ui:define name="corpo">
+		<h:form>
+			<p:messages />
+			<h:panelGrid columns="2">
+				<h:outputLabel value="Login:" />
+				<p:inputText value="#{sessaoMB.usuario}" />
+				<h:outputLabel value="Senha: " />
+				<p:password value="#{sessaoMB.senha}" />
+			</h:panelGrid>
+			<p:commandButton value="Login" action="#{sessaoMB.login()}"
+				process="@form" update="@form" />
+		</h:form>
+	</ui:define>
+</ui:composition>
